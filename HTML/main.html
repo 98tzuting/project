@@ -1,0 +1,201 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@98tzuting 
+98tzuting
+/
+main
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+main/main.html
+@98tzuting
+98tzuting master
+Latest commit d411dcb 18 days ago
+ History
+ 1 contributor
+172 lines (170 sloc)  5.19 KB
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>學習筆記</title>
+    <meta name="description" content="學習歷程與自我撰寫筆記，方便之後複習。" />
+    <!--頁面的簡介(方便別人查詢時) -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <style>
+      body {
+        margin: 0;
+        /* vh 是view height 既视窗高度的意思，100就是100%占满窗口高度  */
+        height: 100vh;
+        background-color: rgb(183, 237, 246);
+      }
+      /* * {
+        border: 1px solid #333;
+      } */
+      .bar{
+      position: fixed;
+      top: 0;
+      width: 0.5%;
+      height: 4px; 
+      }
+      .flex {
+        display: flex;
+      }
+      /* 占满比例 */
+      .flex1 {
+        flex: 1;
+      }
+      /* 竖向 */
+      .column {
+        flex-direction: column;
+      }
+      /* 阴影 */
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      /* 白色背景 */
+      .baiSe {
+        background-color: rgb(214, 240, 248);
+      }
+      /* 上下左右外边距 */
+      .mg8 {
+        margin: 10px;
+      }
+      /* 右外边距 */
+      .mgr8 {
+        margin-right: 8px;
+      }
+      /* 上外边距 */
+      .mgt8 {
+        margin-top: 8px;
+      }
+      /* 中间的大盒子 */
+      .lieBiaoXiang {
+        height: 160px;
+        color: rgb(0, 0, 0);
+      }
+      /* 导航条 */
+      .daoHang {
+        padding: 8px 10px;
+        border-bottom: 3px solid rgb(201, 201, 201);
+        font-size: 14px;
+        font-weight:bold;
+        color: rgb(0, 0, 0);
+      }
+
+      /* 当屏幕宽度小于600px时要改变的css */
+      @media (max-width: 300px) {
+        /* 小屏幕上取消侧边栏，后面学js时会教怎么弹出 */
+        .ceBian {
+          display: none;
+        }
+        /* 内容栏和数据栏flex方向改为竖向 */
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        /* 右区加左外边距 */
+        .youQu {
+          margin-left: 8px;
+        }
+        /* 数据块外边距，大小改为自动宽高 */
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!-- 侧边栏設置 -->
+    <div
+      style="width: 150px; z-index: 3"
+      class="ceBian flex column baiSe yinYing"
+    >
+      <!-- 侧边头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          alt="logo"
+          src="https://www.designevo.com/res/templates/thumb_small/evil-villain.webp?v=1.0.0.2"
+          width="40px"
+          height="40px"
+        />
+        <div style="margin-left: 10px">劉子霆筆記</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daoHang">
+          <a href="https://98tzuting.github.io/main/main.html">回首頁</a>
+        </div>
+        <div class="daoHang">目錄</div>
+        <div class="daoHang">WSL設置</div>
+        <div class="daoHang">基本指令</div>
+        <div class="daoHang">衰變表</div>
+        <div class="daoHang">運行程式(basf2)</div>
+        <div class="daoHang">SKIM篩選</div>
+        <div class="daoHang">BKG(gbasf2)</div>
+        <div class="daoHang">Root</div>
+        <div class="daoHang">PNG(fitting)</div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 5" class="baiSe yinYing">
+      <img srcset="image-480w.jpg 480w,image-800w.jpg 800w, image-1200w.jpg 1200w,flower-1x.jpg 1x,flower-2x.jpg 2x,flower-3x.jpg 3x" src="/main/artistic__landscape_4k_8k_hd-7680x4320.jpg" with="600" heigh="400">
+      </div>
+      <!-- 内容区 -->
+            <div class="flex" > &nbsp;<a href="/main.html">重點筆記</a> &thinsp; &gt; &thinsp; <a href="/main.html">首頁</a></div>
+      <div class="flex flex1 neiRong" style="overflow: auto">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex shuJuQu">
+            <!-- 四个小块显示重点数据 -->
+            <div class="shuJu baiSe yinYing flex1 mgr8">
+              <p>大家好</p>
+            </div>
+          <!-- 列表区，列表数据可以无限增加 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
